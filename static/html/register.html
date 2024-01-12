@@ -1,0 +1,17 @@
+{{template "head" .}}
+{{template "nav" .}}
+Login
+<form method="post">{{ if .Error }}
+    <div class="error">{{ .Error }}</div>{{ end }}
+    <label for="username">Username</label>
+    <input id="username" type="text" name="username">
+    <label for="email">Email</label>
+    <input id="email" type="email" name="email">
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password">
+    <label for="repeatPassword">Repeat Password</label>
+    <input id="repeatPassword" type="password" name="repeatPassword">
+    <input type="submit" value="Register">
+</form>
+Already have an account? <a href="/login">Click here to Login</a>
+{{template "footer" .}}

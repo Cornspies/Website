@@ -5,18 +5,18 @@
     <a href="/forum/">Forum</a>
     <a href="#">Music</a>
     <a href="#">Movies</a>
-    <a href="/tournament/">Tournament</a>
-    {{if .User.IsLoggedIn}}<div class="profile">
+    <a href="/tournament/">Tournament</a>{{if .User.IsLoggedIn}}
+    <div class="profile">
         <a href="/profile/">
         <span>
-            Profile
-            {{if .User.HasProfileIcon}}<img src="/static/img/user/profilePicture/{{.User.UserID}}" alt="icon">
-            {{else}}<img src="/static/img/user/universe_lowres.png" alt="icon">{{end}}
+            Profile{{if .User.HasProfileIcon}}
+            <img src="/static/img/user/profilePicture/{{.User.UserID}}" alt="icon">{{else}}
+            <img src="/static/img/user/universe_lowres.png" alt="icon">{{end}}
         </span>
         </a>
         <a class="logout" href="/logout">Logout</a>
-    </div>
-    {{else}}<a href="/login">
+    </div>{{else}}
+    <a href="/login">
         Login
     </a>{{end}}
     <div class="animation {{.Page.CurrentLocation}}"></div>
